@@ -1,0 +1,86 @@
+input[type=text], select{
+	width:95%;
+	padding: 12px 20px;
+	margin: 8px 0;
+	border: 1px solid #ccc;
+	border-radius: 4px;
+}
+input[type=submit] {
+	width:95%;
+	background-color: #5D5957;
+	color: white;
+	padding: 12px 20px;
+	margin: 8px 0;
+	border: 1px solid #5D5957;
+	cursor: pointer;
+}
+input[type=Number]
+{
+	width:95%;
+	padding: 12px 20px;
+	margin: 8px 0;
+	border: 1px solid #ccc;
+	border-radius: 4px;
+}
+input[type=submit]:hover {
+	background-color: #434241;
+}
+div{
+	border-radius: 5px;
+	background-color: #f2f2f2;
+	padding: 20px;
+}
+input[name=txtCollege]{
+	background-color: white;
+}
+input[type=email]{
+	width:95%;
+	padding: 12px 20px;
+	margin: 8px 0;
+	border: 1px solid #ccc;
+	border-radius: 4px;
+}
+textarea{
+	width:95%;
+	padding: 12px 20px;
+	margin: 8px 0;
+	border: 1px solid #ccc;
+	border-radius: 4px;
+}
+input[type=date]{
+	width:95%;
+	padding: 12px 20px;
+	margin: 8px 0;
+	border: 1px solid #ccc;
+	border-radius: 4px;
+}
+input[type=checkbox]{
+	width:2%;
+	padding: 6px 6px;
+	margin: 8px 0;
+	border: 1px solid #ccc;
+	border-radius: 4px;
+}
+input[type=file]{
+	width:25%;
+	padding: 12px 20px;
+	margin: 8px 0;
+	border: 1px solid #ccc;
+	border-radius: 4px;
+}
+label{
+	font-family: "Times New Roman";
+	font-size: 18px;
+	font-weight: bold;
+}
+input[placeholder]{
+	font-family: "Times New Roman";
+	font-size: 18px;
+}
+legend{
+	font-family: "Times New Roman";
+	font-size: 24px;
+}
+.error{
+	color:red;
+}

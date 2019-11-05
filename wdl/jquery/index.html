@@ -1,0 +1,56 @@
+<html>
+    <head>
+        <title>Javascript Validation</title>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/jquery.validate.min.js"></script>
+    </head>
+    <body>
+        <form action = "" method="post" id="myform" onsubmit ="">
+            <input type="text" name="name" id="name"><br>
+            <input type="text" name="email" id="email"><br>
+            <input type="text" name="phone" id="phone"><br>
+            <input type="submit" name="btnSubmit">
+        </form>
+    </body>
+    <script type="text/javascript">
+        $(document).ready(function()
+        {
+            $("#myform").validate(
+                {
+                    errorClass:'errors',
+                    rules:
+                    {
+                        name:"required",
+                        phone:{
+                            required:true,
+                            maxlength:10,
+                            number:true,
+                            minlength:10
+                        },
+                        email:{
+                            required: true,
+                            email: true
+                        }
+                    },
+                    messages:
+                    {
+                        name:'please enter name',
+                        phone:{
+                            required:"phone cant be blank",
+                            number:'please enter valid phone number',
+                            minlenght:'please enter valid phone number',
+                            maxlenght:'please enter valid phone number'
+                        },
+                        email:{
+                            required:"email cant be blank",
+                            email:"please enter valid email"
+                        }
+                    },
+                    submitHandler: function(form){
+                        form.submit();
+                    }
+                }
+            );
+        });
+    </script>
+</html>

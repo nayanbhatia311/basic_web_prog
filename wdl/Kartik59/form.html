@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Form Css</title>
+	<link rel="stylesheet" type="text/css" href="CSS/formCss.css">
+	<script>
+		function validate()
+		{
+			if(document.testForm.txtName.value == '')
+			{
+				alert("Please Enter Name...");
+				document.testForm.txtName.focus();
+				return false;
+			}
+			else if(document.testForm.txtMobile.value.length != 10)
+			{
+				console.log(document.testForm.txtMobile.length);
+				window.alert("Please enter Numbers or Format is missing");
+				document.testForm.txtMobile.focus();
+				return false;
+			}
+			else if(document.testForm.txtEmail.value == '')
+			{
+				window.alert("Email address is missing");
+				document.testForm.txtEmail.focus();
+				return false;
+			}
+			else if(document.testForm.txtAddress.value=='')
+			{
+				window.alert("Address is missing");
+				document.testForm.txtAddress.focus();
+				return false;
+			}
+		}
+	</script>
+</head>
+<body>
+	<div>
+		<form action="" method="POST" name="testForm" id="testForm" onsubmit="return validate()">
+			<fieldset>
+				<legend><b>Registration Form</b></legend>
+			<label for="txtName">Name</label><br>
+			<input type="text" name="txtName" id="txtName" placeholder="Your name.."><br>
+
+			<label for="txtMobile">Mobile Number</label><br>
+			<input type="Number" name="txtMobile" id="txtMobile" placeholder="Your Mobile number.."><br>
+
+			<label for="txtEmail">Email-id</label><br>
+			<input type="email" name="txtEmail" id="txtEmail" placeholder="Your email address.."><br>
+
+			<label for="txtDate">DOB</label><br>
+			<input type="date" name="txtDate" id="txtDate" min="01-01-1990" max="07-30-2019"><br>
+
+			<label for="txtAddress">Address</label><br>
+			<textarea type="textarea" name="txtAddress" id="txtAddress" rows="5" cols="90"></textarea><br>
+
+			<label for="txtDepartment">Department</label><br>
+			<select name="txtDepartment">
+				<option value="0">Choose Department</option>
+				<option value="computer">Computer Engineering</option>
+				<option value="it">Information Technology</option>
+			</select><br>
+
+			<label for="txtCollege">College</label><br>
+			<input type="text" name="txtCollege" id="txtCollege" value="KJ Somaiya Institute of Engineering & Information Technology" disabled><br>
+
+			<label for="txtHobbies">Hobbies</label><br>
+			<input type="checkbox" name="txtHobbies" id="txtHobbies" style="font-family: 'Times New Roman'; font-size: 16px;">Coding  
+			<input type="checkbox" name="txtHobbies" id="txtHobbies">Playing  
+			<input type="checkbox" name="txtHobbies" id="txtHobbies">Sleeping  <br>
+
+			<label for="fileMarksheet">Upload Marksheet</label><br>
+			<input type="file" name="fileMarksheet" id="fileMarksheet"><br>
+
+			<input type="submit" name="btnSubmit" value="SUBMIT">
+			</fieldset>
+		</form>
+	</div>
+</body>
+</html>

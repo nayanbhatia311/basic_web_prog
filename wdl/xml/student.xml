@@ -1,0 +1,28 @@
+<!DOCTYPE STUDENT SYSTEM "details.dtd">
+<STUDENTS>
+    <TITLE>RESULT OF COMPS</TITLE>
+    <STUDENT>
+        <NAME>KARTIK CHAWDA</NAME>
+        <ROLLNO>59</ROLLNO>
+        <SUB>
+            <SUBNAME>WDL</SUBNAME>
+            <MARKS>50</MARKS>
+        </SUB>
+        <SUB>
+            <SUBNAME>DBMS</SUBNAME>
+            <MARKS>70</MARKS>
+        </SUB>
+    </STUDENT>
+    <STUDENT>
+        <NAME>ABC</NAME>
+        <ROLLNO>60</ROLLNO>
+        <SUB>
+            <SUBNAME>WDL</SUBNAME>
+            <MARKS>39</MARKS>
+        </SUB>
+        <SUB>
+            <SUBNAME>DBMS</SUBNAME>
+            <MARKS>90</MARKS>
+        </SUB>
+    </STUDENT>
+</STUDENTS>

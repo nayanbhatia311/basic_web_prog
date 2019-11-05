@@ -1,0 +1,49 @@
+<html>
+    <head>
+        <title>XML</title>
+    </head>
+    <body>
+        <div id="main">
+
+        </div>
+        <script>
+            document.addEventListener("DOMContentLoaded",function()
+            {
+                xmlhttp = new XMLHttpRequest();
+                xmlhttp.open("GET","student.xml",false);
+                xmlhttp.send();
+                if(xmlhttp.status == 200)
+                {
+                    const xmlDoc = xmlhttp.responseXML;
+                    console.log(xmlDoc.getElementsByTagName("TITLE")[0].textContent);
+                    let output = `<h1>${xmlDoc.getElementsByTagName("TITLE")[0].textContent}</h1><br><br><table>
+                        <thead>
+                            <tr>
+                                <th>name</th>
+                                <th>roll no</th>
+                                <th>subject 1</th>
+                                <th>marks 1</th>
+                                <th>subject 2</th>
+                                <th>marks 2</th>
+                            </tr>
+                        </thead>
+                        <tbody>`;
+                    let student = xmlDoc.getElementsByTagName("STUDENT");
+                    for(var i=0;i<student.length;i++)
+                    {
+                        output += `<tr>
+                                <td>${student[i].getElementsByTagName("NAME")[0].textContent}</td>
+                                <td>${student[i].getElementsByTagName("ROLLNO")[0].textContent}</td>
+                                <td>${student[i].getElementsByTagName("SUBNAME")[0].textContent}</td>
+                                <td>${student[i].getElementsByTagName("MARKS")[0].textContent}</td>
+                                <td>${student[i].getElementsByTagName("SUBNAME")[1].textContent}</td>
+                                <td>${student[i].getElementsByTagName("MARKS")[1].textContent}</td>
+                            </tr>`;
+                    }
+                    output += `</tbody><table>`;
+                    document.getElementById("main").innerHTML = output;
+                }
+            });
+        </script>
+    </body>
+</html>

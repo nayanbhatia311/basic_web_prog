@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Form Css</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/jquery.validate.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="CSS/formCss.css">
+	<script>
+		$(document).ready(function(){
+            $("#testForm").validate(
+                {
+                	errorClass: 'errors',
+                    rules:{
+                        txtName : "required",
+                        txtMobile :{
+							maxlength:10,
+							required : true
+						},
+						txtEmail :"required",
+						txtAddress : "required",
+						txtHobbies : "required",
+						txtMarksheet : "required"
+                    },
+                    messages:{
+                        txtName : "Name is required",
+						txtMobile : "Enter valid phone number",
+						txtEmail : "Enter email address",
+
+						txtAddress : "Please enter residence address",
+						txtHobbies : "Please select atleast 1 hobbies",
+						txtMarksheet : "Please upload your marksheet"
+                    },
+                    submitHandler:function(form){
+                        form.submit();
+                    }
+                }
+            ); 
+        });
+	</script>
+</head>
+<body>
+	<div>
+		<form action="" method="POST" name="testForm" id="testForm" onsubmit="validate()">
+			<fieldset>
+				<legend><b>Registration Form</b></legend>
+			<label for="txtName">Name</label><br>
+			<input type="text" name="txtName" id="txtName" placeholder="Your name.."><br>
+
+			<label for="txtMobile">Mobile Number</label><br>
+			<input type="Number" name="txtMobile" id="txtMobile" placeholder="Your Mobile number.."><br>
+
+			<label for="txtEmail">Email-id</label><br>
+			<input type="email" name="txtEmail" id="txtEmail" placeholder="Your email address.."><br>
+
+			<label for="txtDate">DOB</label><br>
+			<input type="date" name="txtDate" id="txtDate"><br>
+
+			<label for="txtAddress">Address</label><br>
+			<textarea type="textarea" name="txtAddress" id="txtAddress" rows="5" cols="90"></textarea><br>
+
+			<label for="txtDepartment">Department</label><br>
+			<select name="txtDepartment">
+				<option value="0">Choose Department</option>
+				<option value="computer">Computer Engineering</option>
+				<option value="it">Information Technology</option>
+			</select><br>
+
+			<label for="txtCollege">College</label><br>
+			<input type="text" name="txtCollege" id="txtCollege" value="KJ Somaiya Institute of Engineering & Information Technology" disabled><br>
+
+			<label for="txtHobbies">Hobbies</label><br>
+			<input type="checkbox" name="txtHobbies" id="txtHobbies" style="font-family: 'Times New Roman'; font-size: 16px;">Coding  
+			<input type="checkbox" name="txtHobbies" id="txtHobbies">Playing  
+			<input type="checkbox" name="txtHobbies" id="txtHobbies">Sleeping  <br>
+
+			<label for="fileMarksheet">Upload Marksheet</label><br>
+			<input type="file" name="fileMarksheet" id="fileMarksheet"><br>
+
+			<input type="submit" name="btnSubmit" value="SUBMIT">
+			</fieldset>
+		</form>
+	</div>
+</body>
+</html>

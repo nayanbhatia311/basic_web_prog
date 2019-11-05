@@ -1,0 +1,54 @@
+<html>
+    <head>
+        <title>Javascript Validation</title>
+    </head>
+    <body>
+        <form action = "" method="post" id="myform" onsubmit = "return validate()">
+            <input type="text" name="name" id="name"><br>
+            <input type="text" name="email" id="email"><br>
+            <input type="text" name="phone" id="phone"><br>
+            <input type="submit" name="btnSubmit">
+        </form>
+    </body>
+
+    <script>
+        function validate()
+        {
+            var name = document.getElementById("name").value;
+            var email = document.getElementById("email").value;
+            var phone = document.getElementById("phone").value;
+            var atpost = email.indexOf("@");
+            var dotpost = email.lastIndexOf(".");
+            if(name == "")
+            {
+                window.alert("Please enter Name");
+                document.getElementById("name").focus();
+                return false;
+            }
+            else if(atpost<1 || dotpost < atpost+2 || dotpost >= email.length)
+                {
+                    window.alert("Incorrect email address");
+                    document.getElementById("email").focus();
+                    return false;
+                }
+            else if(isNaN(phone))
+            {
+                window.alert("Please enter numeric")
+                document.getElementById("phone").focus;
+                return false;
+            }
+            else if(phone.length > 10)
+            {
+                window.alert("Phone digit exceeds")
+                document.getElementById("phone").focus;
+                return false;
+            }
+            else if(phone.length < 10)
+            {
+                window.alert("Please digit is less")
+                document.getElementById("phone").focus;
+                return false;
+            }
+        }
+    </script>
+</html>
